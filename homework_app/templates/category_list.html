@@ -1,0 +1,18 @@
+{% extends 'homework_base.html' %}
+
+{% block content %}
+    <ol>
+    {% for category in categories  %}
+        <li>
+            <a href="">{{ category.category_name }} </a>
+            {% if perms.homework_app.change_category %}
+            <a href="{% url 'edit-category' slug=category.category_name|escape %}">
+            <button type="submit">Modify</button> </a>
+            {% endif %}
+        </li>
+    {%  endfor %}
+    </ol>
+    {% if perms.homework_app.add_category %}
+    <a href="{% url 'add-category' %}"> <button type="submit">Add category</button> </a>
+    {% endif %}
+{% endblock %}

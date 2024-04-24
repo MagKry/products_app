@@ -1,0 +1,15 @@
+{% extends 'homework_base.html' %}
+
+{% block content %}
+    <h2> Search results: </h2>
+    {% if products %}
+    {% for product in products %}
+        <ul>
+    <li>{{ product.name }}</li>
+        </ul>
+    {% endfor %}
+    {% else %}
+        There are no products matching your search criteria.
+    {% endif %}
+
+{% endblock %}

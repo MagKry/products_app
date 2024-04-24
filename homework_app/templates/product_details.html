@@ -1,0 +1,21 @@
+{% extends 'homework_base.html' %}
+
+{% block content %}
+     <table>
+        <tr>
+        <th> Product name </th>
+            <td>{{ product.name }}</td></tr>
+        <tr><th>Product description</th>
+            <td>{{ product.description }}</td></tr>
+        <tr><th> Product price (gross) </th>
+             <td>{{ product.price }}</td></tr>
+        <tr><th>Product VAT</th>
+             <td>{{ product.vat }}</td></tr>
+        <tr><th> Stock</th>
+             <td>{{ product.stock }}</td></tr>
+        <tr><th>Product categories</th>
+            {% for category in product.categories.all %}
+             <td>{{ category.category_name }}
+            {% endfor %}
+     </table>
+{% endblock %}

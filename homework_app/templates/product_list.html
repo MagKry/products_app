@@ -1,0 +1,15 @@
+{% extends 'homework_base.html' %}
+
+{% block content %}
+    <ol>
+    {% for product in products  %}
+        <li> {{ product }}
+            {% if perms.homework_app.change_product %}
+            <a href="{% url 'edit-product' pk=product.id %}"> <button type="submit">Modify</button> </a> </li>
+            {% endif %}
+    {%  endfor %}
+    </ol>
+    {% if perms.homework_app.add_product %}
+    <a href="{% url 'add-product' %}"> <button type="submit">Add product </button> </a>
+    {% endif %}
+{% endblock %}
