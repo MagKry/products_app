@@ -4,7 +4,7 @@ Each of the product can link to many categories and each category can link to ma
 Templates used in the project extend the base template.
 
 Views:
-- list of categories in alpfabetical order
+- list of categories in alphabetical order
 - lists all products
 - contains the add, modify product and category
 
